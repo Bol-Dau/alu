@@ -8,7 +8,7 @@ The assignment reminder app is a basic app that basically helps you to the stude
 ## How does this application work?
 ### Creating the environment
 The first step that you take is to create the application environment.
-To do that, you simply run the ***==create_environment.sh==*** file either through ==./create_environment.sh== or ==bash create_environment.sh.== While creating the directory structure, you will be prompted to input your name. The purpose for inputting your name is so that when the parent directory of your application is being created, it can have your name at the end. This makes it easy for  you to identify your directory that has your students' information.
+To do that, you simply run the ***== create_environment.sh ==*** file either through ==./create_environment.sh== or ==bash create_environment.sh.== While creating the directory structure, you will be prompted to input your name. The purpose for inputting your name is so that when the parent directory of your application is being created, it can have your name at the end. This makes it easy for  you to identify your directory that has your students' information.
 After running the ***==create_environment.sh==*** file, your directory structure must look like the one shown below.
 
 ## submission_reminder_app(name)
