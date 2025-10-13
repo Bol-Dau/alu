@@ -32,6 +32,7 @@ After that, you have to put in your choice, and then the student's submission st
 ## The core knowledge behind assignment status check.
 * Assignment replacement in config.env file.
 When you chose an assignment that you want to check the students submission status, The name of the assignment is then used as the string for the variable named ASSIGNMENT in `./config/config.env` file.
+* Running different files.
 After successfully replacing the assignment name in the variable, the ***`./startup.sh`*** file the parent directory is then executed.
 The `startup.sh` file then executes  **`./app/reminder.sh`** file.
 The `./app/reminder.sh` file then prints the assignment name and the number of days left to the deadline. The `./app/reminder.sh` file also executes `./modules/functions.sh` file. This file contains scripts that will check for students submission status in `./assets/submission.txt` file, thus printing those who haven’t submitted their assignments for the very assignment that we are checking.
