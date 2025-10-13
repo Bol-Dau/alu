@@ -1,7 +1,8 @@
 # ASSIGNMENT REMINDER APP
-Table of contents
-Creating the application work space
-Checking for students submission status
+###Table of contents
+*Creating the application work space
+*Checking for students submission status
+
 The assignment reminder app is a basic app that basically helps you to the students' submission status for various assignments. 
 
 ## How does this application work?
