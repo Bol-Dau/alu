@@ -1,5 +1,5 @@
 # ASSIGNMENT REMINDER APP
-###Table of contents
+### Table of contents
 *Creating the application work space
 *Checking for students submission status
 
