@@ -1,38 +1,53 @@
-# ASSIGNMENT REMINDER APP
-### Table of contents
-1. Creating the application work space
-2. Checking for students submission status
+# Project README: User Info Program
 
-The assignment reminder app is an app that basically helps you to the check students' submission status for various assignments. 
+## 1. Overview
 
-## How does this application work?
-### 1. Creating the application work space
-The first step that you take is to create the application environment.
-To do that, you simply run the ***`create_environment.sh`*** file either through **`./create_environment.sh`** or **`bash create_environment.sh.`** While creating the directory structure, you will be prompted to input your name. The purpose for inputting your name is to make sure that when the parent directory of your application is being created, it can have your name at the end. This makes it easy for you to identify your directory that has your students' information.
-After running the ***`create_environment.sh`*** file, your directory structure must look like the one shown below.
+This is a four-file Python application designed as an exercise in **modular programming** and **data handling**. The program collects a user's name and age, validates the input, performs a unique conversion into binary format, and then saves and retrieves a personalized message from a text file.
+
+The primary goal of this structure is to demonstrate effective use of imports and separation of concerns by isolating different tasks into dedicated Python files.
+
+## 2. Features
+
+The application executes the following sequence of operations:
+
+  * **User Interface:** Provides friendly welcome and exit messages.
+  * **Input Handling:** Collects and enforces strict validation rules for both name (must not be empty) and age (must be a valid number).
+  * **Data Conversion:** Converts the user's name (text) into a space-separated ASCII binary string (e.g., `01001000 01101001`). Converts the user's age (number) into its native Python binary representation (e.g., `0b10111`).
+  * **File Management:** Saves the combined message to a file named `user_message.txt` and then reads the contents back to the console to confirm successful saving.
+  * **Error Handling:** Uses `try...except` blocks to gracefully manage potential errors during file operations and input validation.
+
+## 3. Project Structure (The Modular Approach)
+
+The program is divided into four distinct files. This organization ensures that functions are grouped by their responsibility, making the code easier to manage, test, and reuse.
+
+| File Name | Role (The Department) | Key Functions |
+| :--- | :--- | :--- |
+| **`main_program.py`** | **The Controller (Boss)** | `get_user_info()`: Manages program flow and orchestrates all function calls. |
+| **`helper_functions.py`** | **The Logic (Worker)** | `validate_input()`, `convert_to_binary()`, `create_message()` |
+| **`file_manager.py`** | **The I/O (Secretary)** | `save_message()`, `read_message()` (includes `try/except` for file errors). |
+| **`greetings.py`** | **The UX (Receptionist)** | `show_intro()`, `show_exit_message()` |
+
+## 4. How to Run the Program
+
+1.  **Prerequisites:** You must have a working Python 3 environment installed.
+2.  **Setup:** Ensure all four Python files (`main_program.py`, `helper_functions.py`, `file_manager.py`, and `greetings.py`) are located in the **same directory**.
+3.  **Execution:** Open your terminal or command prompt, navigate to the project directory, and run the main file:
+
+<!-- end list -->
 
 ```bash
-./submission_reminder_app(name)
-├── app
-│   └── reminder.sh
-├── assets
-│   └── submissions.txt
-├── config
-│   └── config.env
-├── modules
-│   └── functions.sh
-└── startup.sh
+python3 main_program.py
 ```
 
-### 2. Checking students' submission status.
-The next simple step after creating your application work space is to check your students' submission status. To achieve this, you have to simply run the ***`copilot_shell_script.sh`*** through either typing **`./copilot_shell_script.sh`** or **`bash copilot_shell_script.sh.`**
-The first thing that happens is you are shown an interactive menu containing all the assignmnets that you can check. 
-After that, you have to put in your choice, and then the student's submission status is shown. You are then again asked if you want to check for another assignment. This keeps on happening in a loop until you choose to exit.
+4.  **Interaction:** The program will prompt you for your name and age. It will continue looping until valid input is provided for both fields.
 
-## The core knowledge behind assignment status check.
-* Assignment replacement in config.env file.
-When you chose an assignment that you want to check the students submission status, The name of the assignment is then used as the string for the variable named ASSIGNMENT in `./config/config.env` file.
-* Running different files.
-After successfully replacing the assignment name in the variable, the ***`./startup.sh`*** file the parent directory is then executed.
-The `startup.sh` file then executes  **`./app/reminder.sh`** file.
-The `./app/reminder.sh` file then prints the assignment name and the number of days left to the deadline. The `./app/reminder.sh` file also executes `./modules/functions.sh` file. This file contains scripts that will check for students submission status in `./assets/submission.txt` file, thus printing those who haven’t submitted their assignments for the very assignment that we are checking.
+## 5. Key Learning Outcomes
+
+This project reinforces several fundamental programming concepts:
+
+  * **Function Definition and Call:** Correctly defining functions with parameters and calling them with appropriate arguments.
+  * **Modular Programming:** Understanding the `from X import Y` mechanism and why breaking code into modules is beneficial.
+  * **Looping and Validation:** Using `while True` loops with `break` to force continuous input until validation criteria are met.
+  * **String Formatting:** Using f-strings and character manipulation (`ord()`, `format()`) to achieve specific data transformation requirements.
+
+Would you like me to help you start writing the code for the **`file_manager.py`** functions, which need to handle file saving and reading with `try/except` blocks?
